@@ -1,0 +1,4 @@
+node_modules/
+public/
+database.rules.json
+firebase.json
