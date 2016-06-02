@@ -1,6 +1,8 @@
 import React from 'react';
 import JSONTree from 'react-json-tree';
 
+import { convertSchema } from './SchemaConverter.js';
+
 const defaultProps = {
 	name: "",
 	description: "",
@@ -15,15 +17,8 @@ export default class ResponseComponent extends React.Component {
 	parseResponse() {
 
 		let response = "No response body specified";
-
-		if (this.props.schema.hasOwnProperty("type") && this.props.schema.type == "array") {
-			// it's an array
-			response = <JSONTree data={[this.props.schema.items.properties]} />;
-		}
-		else if (this.props.schema.hasOwnProperty("properties") && Object.keys(this.props.schema.properties).length > 0) {
-			// it's an object
-			response = <JSONTree data={this.props.schema.properties} />;
-		}
+		
+		response = <JSONTree data={convertSchema(this.props.schema)} />;
 
 		return response;
 	}

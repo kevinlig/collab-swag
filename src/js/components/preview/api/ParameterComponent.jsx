@@ -1,5 +1,6 @@
 import React from 'react';
 import JSONTree from 'react-json-tree';
+import { convertSchema } from './SchemaConverter.js';
 
 const defaultProps = {
 	name: "",
@@ -14,7 +15,7 @@ export default class ParameterComponent extends React.Component {
 		let output = "";
 
 		if (this.props.in == "body") {
-			output = <JSONTree data={this.props.schema.properties} />;
+			output = <JSONTree data={convertSchema(this.props.schema)} />;
 		}
 		else {
 			output = <div><b>Type:</b> {this.props.type}</div>;
