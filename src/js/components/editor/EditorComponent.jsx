@@ -82,6 +82,11 @@ export default class EditorComponent extends React.Component {
 		this.props.editorChanged(newValue);
 	}
 
+	editorLoaded(editor) {
+		// use soft tabs for YAML
+		editor.session.setUseSoftTabs(true);
+	}
+
 	render() {
 		return (
 			<div className="editor">
@@ -94,6 +99,8 @@ export default class EditorComponent extends React.Component {
 					width={this.state.width + "px"}
 					value={this.props.editorValue}
 					cursorStart={5}
+					tabSize={2}
+					onLoad={this.editorLoaded.bind(this)}
 					onChange={this.handleChange.bind(this)} />
 			</div>
 		);
