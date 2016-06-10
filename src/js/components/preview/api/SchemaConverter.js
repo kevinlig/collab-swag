@@ -2,7 +2,7 @@ const traverseObject = (object) => {
 
 	const output = {};
 
-	if (object.hasOwnProperty('properties')) {
+	if (object && object.hasOwnProperty('properties')) {
 		Object.keys(object.properties).forEach((key) => {
 			const property = object.properties[key];
 			const type = property.type;
