@@ -1,0 +1,13 @@
+const AppConfig = {
+	firebase: {
+		"apiKey": "",
+		"authDomain": "",
+		"databaseURL": "",
+		"messagingSenderId": "",
+		"projectId": "",
+		"storageBucket": ""
+	},
+	dev: false
+};
+
+export default AppConfig;

@@ -8,7 +8,8 @@ import * as editorActions from '../redux/actions/editorActions.js';
 import BodyComponent from './BodyComponent.jsx';
 
 import * as FirebaseHelper from '../firebase/index.js';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 class BodyContainer extends React.Component {
 

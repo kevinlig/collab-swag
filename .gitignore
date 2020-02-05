@@ -4,3 +4,4 @@ database.rules.json
 firebase.json
 .firebaserc
 src/js/config.js
+.firebase
